@@ -1,0 +1,24 @@
+{
+  "name": "internincoming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.3.0",
+    "conf": "^10.1.2",
+    "csv": "^6.1.0",
+    "csv-writer": "^1.6.0",
+    "node-wget": "^0.4.3",
+    "sqlite3": "^5.0.8"
+  },
+  "bin": {
+    "InternIncoming": "index.js"
+  }
+}
