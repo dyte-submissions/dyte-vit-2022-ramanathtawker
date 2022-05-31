@@ -12,6 +12,11 @@
   "dependencies": {
     "chalk": "^5.0.1",
     "commander": "^9.3.0",
-    "conf": "^10.1.2"
+    "conf": "^10.1.2",
+    "csv": "^6.1.0",
+    "sqlite3": "^5.0.8"
+  },
+  "bin": {
+    "InternIncoming": "index.js"
   }
 }
