@@ -74,7 +74,7 @@ Contributor : https://github.com/ramanathtawker
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Output of the project with customer URL 
+Output of the project with given+custome URL [For Testing]
 URL GIVEN : https://github.com/ramanathtawker/Safe-Zone
 
 ![alt text](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true)
