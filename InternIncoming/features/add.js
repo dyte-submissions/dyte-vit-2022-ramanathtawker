@@ -77,12 +77,13 @@ function remaining() {
         let finalRepoLink=e.repo;
         finalRepoLink=finalRepoLink.replace("github.com","raw.githubusercontent.com");
         finalRepoLink+="master/package.json";
+        console.log(finalRepoLink);
         fetch(finalRepoLink,settings)
             .then(res=>res.json())
             .then((json) => {
                 let a1=json["dependencies"]["axios"];
                 a1=a1.replace("^","");
-                var ans=compareVersion(a1,"0.23.0");
+                var ans=compareVersion(a1,instance);
                 //console.log(a1);
                 if(ans===0 || ans===1)
                 {

@@ -2,3 +2,4 @@ name,repo,version,version_satisfied
 dyte-react-sample-app,https://github.com/dyte-in/react-sample-app/,0.24.0,True
 dyte-js-sample-app,https://github.com/dyte-in/javascript-sample-app/,0.21.1,False
 dyte-sample-app-backend,https://github.com/dyte-in/backend-sample-app/,0.23.0,True
+Ramanathtawker-safezone,https://github.com/ramanathtawker/Safe-Zone/,0.20.0,False
