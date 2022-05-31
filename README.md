@@ -77,11 +77,11 @@ Contributor : https://github.com/ramanathtawker
 Output of the project with customer URL 
 URL GIVEN : https://github.com/ramanathtawker/Safe-Zone
 
-![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true))
+![alt text](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true)
 
 
 CLI Inputs
-![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true))
+![alt text](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true)
 
 
 
