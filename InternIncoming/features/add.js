@@ -1,6 +1,6 @@
 function compareVersion(a,b)
 {
-    a=a.replace("^","");
+    
     if (a === b) {
         return 0;
     }
@@ -35,55 +35,77 @@ function compareVersion(a,b)
     return 0;
 }
 
-
 const fs = require("fs");
 const { parse } = require("csv-parse");
 const fetch = require('node-fetch');
 let settings = {method:"Get"};
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csvWriter = createCsvWriter({
+    path: 'output.csv',
+    header: [
+      {id: 'name', title: 'name'},
+      {id: 'repo', title: 'repo'},
+      {id: 'version', title: 'version'},
+      {id: 'version_satisfied', title: 'version_satisfied'},
+    ]
+  });
 //const arr=[];
 const answer=[];
-function add (task) {
-    fs.createReadStream('./sampleInput.csv')
+var instance="";
+
+function add (task,s) {
+    
+    
+    instance=s.substring(6,12).toString();
+    
+    fs.createReadStream('./'+task)
         .pipe(parse({ delimiter: ",", from_line: 2 }))
         .on("data", (row) => {
             
-            answer.push({name:row[0],repo:row[1]});
+        answer.push({name:row[0],repo:row[1]});
         //arr.push(row[1]);
         })
         .on("end",()=>{
-            answer.forEach((e,i) => {
-                
-                arr[i]=e.replace("github.com","raw.githubusercontent.com");
-                //arr[i]=e+"master/package.json";
-            })
-            arr.forEach((e,i) => {
-                arr[i]=e+"master/package.json";
-                //arr[i]=e+"master/package.json";
-            })
-            arr.forEach((e)=>{
-                let url=e;
-                //console.log(url);
-                fetch(url,settings)
-                    .then(res=>res.json())
-                    .then((json) => {
-                        let a1=json["dependencies"]["axios"];
-                        var ans=compareVersion(a1,"0.23.0");
-                        if(ans===0 || ans===1)
-                        {
-                            // ans="True";
-                            // answer["url"]=url;
-                            // answer["version"]=a1;
-                            // answer["version_satisfied"]=ans;
-                            
-                            console.log(answer);
-                        }
-                        
-                    });
-            })
-            
+        remaining();
+        //output();
         })
-        
-        
+   
 }
+
+function remaining() {
+    answer.forEach((e,i)=>{
+        let finalRepoLink=e.repo;
+        finalRepoLink=finalRepoLink.replace("github.com","raw.githubusercontent.com");
+        finalRepoLink+="master/package.json";
+        fetch(finalRepoLink,settings)
+            .then(res=>res.json())
+            .then((json) => {
+                let a1=json["dependencies"]["axios"];
+                a1=a1.replace("^","");
+                var ans=compareVersion(a1,"0.23.0");
+                //console.log(a1);
+                if(ans===0 || ans===1)
+                {
+                    ans='True';
+                }
+                else{
+                    ans='False';
+                }
+                answer[i]={...answer[i],'version':a1,'version_satisfied':ans};
+                //console.log(answer);
+                csvWriter
+                    .writeRecords(answer)
+                    
+                
+                
+            })
+        
+    })
+
+}
+       
+        
+        
+
 
 module.exports = add;
