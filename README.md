@@ -81,7 +81,7 @@ URL GIVEN : https://github.com/ramanathtawker/Safe-Zone
 
 
 CLI Inputs
-![alt text](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output.png?raw=true)
+![alt text](https://github.com/dyte-submissions/dyte-vit-2022-ramanathtawker/blob/main/images/output_2.png?raw=true)
 
 
 
